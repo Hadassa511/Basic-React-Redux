@@ -1,7 +1,7 @@
 import {
-  FETCH_PRODUCTS_BEGIN,
-  FETCH_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_FAILURE
+  FETCH_USERS_BEGIN,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_FAILURE
 } from '../actions/types';
 
 const initialState = {
@@ -10,22 +10,22 @@ const initialState = {
   error: null
 };
 
-export default function productReducer(state = initialState, action) {
+export default function userReducer(state = initialState, action) {
   switch (action.type) {
-    case FETCH_PRODUCTS_BEGIN:
+    case FETCH_USERS_BEGIN:
       return {
         ...state,
         loading: true,
         error: null
       };
 
-    case FETCH_PRODUCTS_SUCCESS:
+    case FETCH_USERS_SUCCESS:
       return {
         ...state,
         loading: false,
-        items: action.payload.products
+        items: action.payload.users
       };
-    case FETCH_PRODUCTS_FAILURE:
+    case FETCH_USERS_FAILURE:
       return {
         ...state,
         loading: false,
